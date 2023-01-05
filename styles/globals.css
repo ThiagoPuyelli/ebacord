@@ -1,8 +1,109 @@
+@font-face {
+  src: url(../public/fonts/GAME\ OVER.TTF);
+  font-family: gameOver;
+}
+
+@font-face {
+  src: url(../public/fonts/Gomawo.ttf);
+  font-family: gomawo;
+}
+
+
+@font-face {
+  src: url(../public/fonts/Pixel\ Rand.otf);
+  font-family: pixelRand;
+}
+
+@font-face {
+  src: url(../public/fonts/Retro\ Gaming.ttf);
+  font-family: retroGaming;
+}
+
+@font-face {
+  src: url(../public/fonts/ChakraPetch-Regular.ttf);
+  font-family: chakra;
+}
+
+@font-face {
+  src: url(../public/fonts/Roboto-Regular.ttf);
+  font-family: roboto;
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(180deg);
+  }
+}
+
+@keyframes rotateLogoReverse {
+  0% {
+    transform: rotateZ(180deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes contact {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  40% {
+    transform: rotateZ(-10deg);
+  }
+  60% {
+    transform: rotateZ(10deg);
+  }
+  80% {
+    transform: rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes flickerMachine {
+  0% {
+    /*border-bottom: 10px solid white;*/
+    display: none;
+  }
+}
+
+@keyframes machine {
+  0% {
+    width: 483px;
+  }
+  100% {
+    width: 55px;
+  }
+}
+
+@keyframes mostrarElemento {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+:root {
+  --principalColor: #121d31;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: Roboto, chakra, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -15,6 +116,42 @@ a {
   box-sizing: border-box;
 }
 
+.contentPresentation {
+  background-image: url(../public/img/noche_de_frio.png);
+  background-size: cover;
+}
+
+.presentation {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.contentFooter {
+  background-image: url(../public/img/boceto2.png);
+  background-size: cover;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.imgContentForm,
+.imgForm {
+  background-image: url(../public/img/contactFondo.png);
+  background-size: cover;
+}
+
+.imgForm {
+  width: 450px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-position-x: -200px;
+}
+
+/*.contentContact {
+  background-image: url(../public/img/contactFondo.png);
+  background-size:cover;
+}*/
+/*
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -23,4 +160,4 @@ a {
     color: white;
     background: black;
   }
-}
+}*/
