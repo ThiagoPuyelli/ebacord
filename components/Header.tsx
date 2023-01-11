@@ -18,6 +18,7 @@ const Header = () => {
       border-bottom: 1px solid #111;
       box-shadow: 0px 0px 3px black;
       top: 0px;
+      z-index: 1;
       .logo {
         background-color: var(--principalColor);
         padding: 0px;
@@ -52,14 +53,114 @@ const Header = () => {
         justify-content: space-between;
         align-items: center;
         .link {
-          color: white;
-          text-decoration: none;
-          font-family: pixelRand;
-          font-size: 25px;
           transition: 300ms all;
-        }
-        .link:hover {
-          transform: scale(1.2, 1.2);
+          .linkHref {
+            border-bottom: 2px solid white;
+          }
+          .linkHref,
+          .linkSpan {
+            color: white;
+            text-decoration: none;
+            font-family: pixelRand;
+            transition: 300ms all;
+            font-size: 19px;
+          }
+          .linkSpan {
+            display: block;
+            width: 60px;
+            overflow: hidden;
+            position: absolute;
+            margin-left: 0px;
+            margin-top: -33px;
+            color: #4467ac;
+            background: var(--principalColor);
+            cursor: pointer;
+            width: 0px;
+            transition: 300ms all;
+            border-bottom: 2px solid #4467ac;
+          }
+          .linkArrow {
+            display: block;
+            position: absolute;
+            color: white;
+            margin-left: 60px;
+            margin-top: -30px;
+            width: 35px;
+            * {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          :hover {
+            .subContent {
+              transform: translateY(0px);
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          .subContent {
+            /*display: none;*/
+            padding-top: 20px;
+            margin-bottom: -20px;
+            transform: translateY(-30px);
+            opacity: 0;
+            transition: 150ms all;
+            visibility: hidden;
+            /*:hover {
+              display: block !important;
+            }*/
+          }
+          .subLinks {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: left;
+            background: var(--principalColor);
+            padding: 10px;
+            border: 2px solid #111;
+            position: absolute;
+            border-top: none;
+            padding-top: 10px;
+            margin-left: -25px;
+            font-family: pixelRand;
+            transition: 300ms all;
+            .subLink {
+              color: white;
+              margin-bottom: 20px;
+              margin-top: 10px;
+              font-size: 17px;
+              .hoverSub {
+                position: absolute;
+                background: var(--principalColor);
+                color: #4467ac;
+                overflow: hidden;
+                width: 0px;
+                border-right: 2px solid #4467ac;
+                transition: 300ms all;
+                height: 20px;
+                * {
+                  margin-left: 8px;
+                  height: 32px;
+                  overflow: hidden;
+                  width: 0px;
+                }
+              }
+              .originalSub {
+                margin-left: 8px;
+              }
+              /*.barSub {
+                width: 5px;
+                background: #4467ac;
+              }*/
+              :hover {
+                .hoverSub {
+                  width: 130px;
+                  * {
+                    width: 130px;
+                  }
+                }
+              }
+            }
+          }
         }
       }
       .links.left {
@@ -82,7 +183,34 @@ const Header = () => {
     <HeaderStyled>
       <div className="complete">
         <div className="links left">
-          <Link passHref href='/' className='link'>Cursos</Link>
+          <div className="link">
+            <Link passHref href='/' className='linkHref'>Cursos</Link>
+            <div className="subContent">
+              <div className="subLinks">
+                <div className="subLink" style={{marginBottom: '20px'}}>
+                  <Link passHref href='/' className="hoverSub">
+                    <span>Game design</span>
+                  </Link>
+                  <div className="barSub"></div>
+                  <Link passHref href='/' className='originalSub'>Game design</Link>
+                </div>
+                <div className="subLink">
+                  <Link passHref href='/' className="hoverSub">
+                    <span>Diseño</span>
+                  </Link>
+                  <div className="barSub"></div>
+                  <Link passHref href='/' className='originalSub'>Diseño</Link>
+                </div>
+                <div className="subLink">
+                  <Link passHref href='/' className="hoverSub">
+                    <span>Programación</span>
+                  </Link>
+                  <div className="barSub"></div>
+                  <Link passHref href='/' className='originalSub'>Programación</Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <Link href='/' className='logo'>
           <div className="imgLogo">
@@ -90,7 +218,10 @@ const Header = () => {
           </div>
         </Link>
         <div className="links right">
-        <Link href='/' className='link'>Nosotros</Link>
+          <div className="link">
+            <Link href='/' className='linkHref'>Nosotros</Link>
+            <span className='linkSpan'>Nosotros</span>
+          </div>
         </div>
       </div>  
     </HeaderStyled>

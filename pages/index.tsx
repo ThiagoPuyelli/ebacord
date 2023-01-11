@@ -4,10 +4,14 @@ import styled from '@emotion/styled'
 import logoEBacord from '../public/img/LogoEBacord.png'
 import Image from 'next/image'
 import Presentation from '../components/Presentation'
+import ButtonEffect from '../components/ButtonEffect'
+import About from '../components/About'
+import Courses from '../components/Courses'
+import Teachers from '../components/Teachers'
 
 const Home: NextPage = () => {
   const IndexStyled = styled.div`
-    height: 1900px;
+    background: linear-gradient(to left, #1d3258, #111d33);
     /*display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -16,6 +20,7 @@ const Home: NextPage = () => {
     align-items: center;
     height: 500px;
     background: linear-gradient(to left, var(--principalColor), #111d33);
+    
     .logoPresentation {
       width: 550px;
       overflow: hidden;
@@ -51,6 +56,9 @@ const Home: NextPage = () => {
   return (
     <IndexStyled>
       <Presentation />
+      <About />
+      <Courses />
+      <Teachers />
     </IndexStyled>
   )
 }

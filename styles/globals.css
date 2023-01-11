@@ -9,8 +9,12 @@
 }
 
 
-@font-face {
+/*@font-face {
   src: url(../public/fonts/Pixel\ Rand.otf);
+  font-family: pixelRand;
+}*/
+@font-face {
+  src: url(../public/fonts/Russo_One.ttf);
   font-family: pixelRand;
 }
 
@@ -87,6 +91,17 @@
 @keyframes mostrarElemento {
   0% {
     transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hoverLink {
+  0% {
+    transform: translateY(-30px);
     opacity: 0;
   }
   100% {

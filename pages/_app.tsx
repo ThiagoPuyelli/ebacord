@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect (() => {
     let scrollY = window.scrollY
     window.addEventListener('scroll', () => {
-      console.log(window.scrollY)
       const complete: HTMLElement|null = document.querySelector('.complete')
       const logo: HTMLElement|null = document.querySelector('.logo')
       const logoImg: HTMLElement|null = document.querySelector('.logo .imgLogo')
@@ -35,7 +34,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Header />
       <ContactButton />
       <Component {...pageProps} />
-      <Footer />
     </div>
   )
 }

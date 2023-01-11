@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from "react-hook-form"
 import * as yup from 'yup'
 import emailjs from '@emailjs/browser'
+import ButtonEffect from "../components/ButtonEffect"
 
 const Contact = () => {
   const ContactStyled = styled.div`
@@ -22,6 +23,8 @@ const Contact = () => {
         width: 800px;
         border-bottom: 3px solid #4467ac;
         padding-bottom: 20px;
+        font-family: pixelRand;
+        font-weight: normal;
       }
       p {
         width: 800px;
@@ -49,12 +52,15 @@ const Contact = () => {
           display: block;
           width: 100%;
           text-align: center;
+          font-family: pixelRand;
+          font-weight: normal;
+          text-shadow: 0px 0px 2px #111;
         }
         .formContact {
           display: flex;
           flex-flow: row wrap;
           width: 300px;
-          justify-content: space-between;
+          justify-content: center;
           .inputContact,
           .description {
             width: 100%;
@@ -74,6 +80,9 @@ const Contact = () => {
           .description {
             width: 100%;
             height: 80px;
+          }
+          .buttonContact {
+            margin: 0px auto;
           }
           .submitContact {
             padding: 15px;
@@ -110,16 +119,15 @@ const Contact = () => {
     if (phone) {
       window.addEventListener('keyup', (e: any) => {
         const value = e.target.value
-        console.log()
         if (typeof value === 'string') {
-          phone.value = value.replace(/\s/g, '').replace(/\D/g, '')
+          phone.value = value.replace(/[^0-9]/g, '')
         }
       })
     }
   }, [])
 
   const submitForm = (data: any) => {
-    console.log('data')
+    console.log('El pepe')
   }
 
   return (
@@ -134,14 +142,14 @@ const Contact = () => {
         <div className="contentForm">
           <div className="imgForm">
             <div className="form">
-              <h1 className="titleContact">Envia tu contacto!</h1>
+              <h1 className="titleContact">Envia tu mensaje!</h1>
               <form className="formContact" onSubmit={handleSubmit(submitForm)}>
                 <input className='inputContact' maxLength={50} type="text" placeholder='Nombre' {...register('name')} />
                 <input className='inputContact' maxLength={50} type="text" placeholder='Apellido' {...register('lastname')} />
                 <input className='inputContact' maxLength={30} type="email" placeholder='Correo electrónico' {...register('email')} />
                 <input className='inputContact phone' maxLength={15} type="text" placeholder='Numero de teléfono' {...register('phone')} />
-                <textarea placeholder="Motivo de consulta" maxLength={400} className="description" {...register('description')}></textarea>
-                <input type='submit' className='submitContact' value='Enviar consulta' />
+                <textarea placeholder="Motivo de consulta" maxLength={400} className="description" {...register('message')}></textarea>
+                <ButtonEffect value='Enviar mensaje' color='#ccc' type='submit' />
               </form>
             </div>
           </div>
