@@ -9,7 +9,8 @@ const About = () => {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-evenly;
-      margin-bottom: 120px;
+      padding-bottom: 180px;
+      background: var(--principalColor);
       .titleAbout {
         display: block;
         color: white;

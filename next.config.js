@@ -6,13 +6,14 @@ const nextConfig = {
     { dev, dir, outDir, distDir, buildId }
   ) {
     return {
-      '/': { page: '/' },
-      '/contact': { page: '/contact' }
+      '__nextDefaultLocale': { page: '__nextDefaultLocale' },
+      '/contact': { page: '/contact' },
+      '/course': { page: '/course' }
     }
   },
   images: {
     loader: 'akamai',
-    path: '',
+    path: 'public/img',
     unoptimized: true
   }
 }

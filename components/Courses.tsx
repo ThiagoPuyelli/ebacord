@@ -3,6 +3,7 @@ import Course from "./Course"
 import unity from '../public/img/unity.png'
 import { useEffect } from "react"
 import setAnimation from "../utils/setAnimation"
+import coursesData from "../data/coursesData"
 
 const Courses = () => {
   const CoursesStyled = styled.div`
@@ -42,27 +43,10 @@ const Courses = () => {
     <CoursesStyled>
       <h1 className='titleCourses'>Nuestros cursos</h1>
       <div className="courses">
-        <Course title='Unity' subtitle='De básico a avanzado' image={unity} information={[
-          'Certificado incluido',
-          'Gratis',
-          'Clases en vivo'
-        ]} color={'#eff3f8'} />
-
-        <Course title='Unity' subtitle='De básico a avanzado' image={unity} information={[
-          'Certificado incluido',
-          'Gratis',
-          'Clases en vivo'
-        ]} color={'#eff3f8'} />
-        <Course title='Unity' subtitle='De básico a avanzado' image={unity} information={[
-          'Certificado incluido',
-          'Gratis',
-          'Clases en vivo'
-        ]} color={'#eff3f8'} />
-        <Course title='Unity' subtitle='De básico a avanzado' image={unity} information={[
-          'Certificado incluido',
-          'Gratis',
-          'Clases en vivo'
-        ]} color={'#eff3f8'} />
+        {coursesData.map((c: any) => {
+          const {difficulty, name, info, image} = c
+          return <Course title={name} information={info} subtitle={difficulty} image={image} color={'#eff3f8'} key={name}/>
+        })}
       </div>
     </CoursesStyled>
   )

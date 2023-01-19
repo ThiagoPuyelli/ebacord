@@ -131,10 +131,10 @@ const Header = () => {
               .hoverSub {
                 position: absolute;
                 background: var(--principalColor);
-                color: #4467ac;
+                color: #306fe2;
                 overflow: hidden;
                 width: 0px;
-                border-right: 2px solid #4467ac;
+                border-right: 2px solid #306fe2;
                 transition: 300ms all;
                 height: 20px;
                 * {

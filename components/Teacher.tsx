@@ -5,25 +5,46 @@ type TeacherData = {
   vocation: string,
   img: any,
   name: string,
-  sentence: string
+  phrase: string
 }
 
-const Teacher = ({vocation, img, name, sentence}: TeacherData) => {
+const Teacher = ({vocation, img, name, phrase}: TeacherData) => {
   const TeacherStyled = styled.div`
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    width: 400px;
+    width: 350px;
     color: white;
+    background: var(--principalColor);
+    margin-top: 50px !important;
+    font-family: pixelRand;
+    border-radius: 20px;
+    border: 1px solid #ccc;
     .vocation {
-      font-family: pixelRand;
+      display: block;
+      font-weight: normal;
+      font-size: 20px;
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+      width: 100%;
+      text-align: center;
+      border-radius: 20px 20px 0px 0px;
+      background-image: radial-gradient(circle, rgba(137, 120, 211, 0.4) 0%, var(--principalColor) 100%);
     }
     .imgTeacher {
       width: 100px;
+      margin-top: 20px;
       * {
         width: 100%;
         height: 100%;
       }
+    }
+    .name, {
+      margin: 10px;
+    }
+    .sentence {
+      margin: 10px;
+      text-align: center;
     }
   `
   return (
@@ -32,7 +53,8 @@ const Teacher = ({vocation, img, name, sentence}: TeacherData) => {
       <div className="imgTeacher">
         <Image src={img} alt={'Profesor ' + name} />
       </div>
-      <p className='sentence'>{sentence}</p>
+      <p className="name">{name}</p>
+      <p className='sentence'>{phrase}</p>
     </TeacherStyled>
   )
 }

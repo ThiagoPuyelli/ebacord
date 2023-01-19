@@ -1,14 +1,16 @@
 import styled from "@emotion/styled";
 import Teacher from "./Teacher";
-import gonzalo from '../public/img/GonzaloCantarelli.jpg'
 import { useEffect } from "react";
 import setAnimation from "../utils/setAnimation";
+import teachersData from "../data/teachersData";
 
 const Teachers = () => {
   const TeachersStyled = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    padding-bottom: 100px;
+    margin-top: 80px;
     .teachersTitle {
       display: block;
       width: 90%;
@@ -38,12 +40,10 @@ const Teachers = () => {
         Nuestros profesores
       </h1>
       <div className="teachers">
-        <Teacher vocation='Unity programmer' img={gonzalo} name='Gonzalo Cantarelli' sentence='El conocimiento es poder' />
-        <Teacher vocation='Unity programmer' img={gonzalo} name='Gonzalo Cantarelli' sentence='El conocimiento es poder' />
-        <Teacher vocation='Unity programmer' img={gonzalo} name='Gonzalo Cantarelli' sentence='El conocimiento es poder' />
-        <Teacher vocation='Unity programmer' img={gonzalo} name='Gonzalo Cantarelli' sentence='El conocimiento es poder' />
-        <Teacher vocation='Unity programmer' img={gonzalo} name='Gonzalo Cantarelli' sentence='El conocimiento es poder' />
-        <Teacher vocation='Unity programmer' img={gonzalo} name='Gonzalo Cantarelli' sentence='El conocimiento es poder' />
+        {teachersData.map((t: any) => {
+          const {name, phrase, vocation, image} = t
+          return <Teacher name={name} phrase={phrase} vocation={vocation} img={image} key={name} />
+        })}
       </div>
     </TeachersStyled>
   )

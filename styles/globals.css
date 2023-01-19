@@ -110,8 +110,18 @@
   }
 }
 
+@keyframes hoverButton {
+  0% {
+    transform: translateY(-60px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 :root {
   --principalColor: #121d31;
+  --secondaryColor: #306fe2;
 }
 
 html,
@@ -129,11 +139,14 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
 }
 
 .contentPresentation {
   background-image: url(../public/img/noche_de_frio.png);
   background-size: cover;
+  /*background-image: radial-gradient(circle, rgba(81, 70, 131, 0.4) 0%, #152540 100%);*/
 }
 
 .presentation {

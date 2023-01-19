@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect } from "react"
 import setAnimation from "../utils/setAnimation"
 import ButtonEffect from "./ButtonEffect"
@@ -24,12 +25,14 @@ const Course = ({image, subtitle, information, title, color}: CourseData) => {
     padding-bottom: 10px;
     transition: 300ms all;
     background: var(--principalColor);
+    height: 330px;
     .topCourse {
       display: flex;
       flex-flow: row wrap;
       justify-content: left;
       border-bottom: 1px solid #eff3f8;
       width: 100%;
+      padding-bottom: 10px;
       .imageCourse {
         width: 70px;
         height: 70px;
@@ -48,6 +51,7 @@ const Course = ({image, subtitle, information, title, color}: CourseData) => {
         .subCourse {
           font-size: 16px;
           color: #eff3f8;
+          margin-top: 10px;
         }
       }
     }
@@ -71,7 +75,7 @@ const Course = ({image, subtitle, information, title, color}: CourseData) => {
       position: absolute;
       margin-top: -20px;
       width: 350px;
-      height: 350px;
+      height: 330px;
       transition: 300ms all;
     }
     .border.top {
@@ -87,7 +91,7 @@ const Course = ({image, subtitle, information, title, color}: CourseData) => {
       border-bottom: 1px solid #ccc;
     }
     :hover {
-      background-image: radial-gradient(circle, rgba(137, 120, 211, 0.4) 0%, #152540 100%);
+      background-image: radial-gradient(circle, rgba(81, 70, 131, 0.4) 0%, #152540 100%);
       transform: scale(1.04, 1.04);
       .border.right {
         margin-left: 10px;
@@ -132,7 +136,9 @@ const Course = ({image, subtitle, information, title, color}: CourseData) => {
           )
         })}
       </div>
-      <ButtonEffect color={color} value='Aplicar' type='button' />
+      <Link href='/course'>
+        <ButtonEffect color={color} value='Aplicar' type='button' />
+      </Link>
     </CourseStyled>
   )
 }

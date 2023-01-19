@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import styled from '@emotion/styled'
 import logoEBacord from '../public/img/LogoEBacord.png'
 import Image from 'next/image'
+import { useEffect } from 'react'
 
 const Presentation: NextPage = () => {
   const PresentationStyled = styled.div`
@@ -11,7 +12,7 @@ const Presentation: NextPage = () => {
     padding-left: 100px;
     padding-right: 100px;
     align-items: center;
-    height: 610px;
+    height: 100%;
     /*background: linear-gradient(to left, #1d3258, #111d33);*/
     .logoPresentation {
       width: 550px;
@@ -44,6 +45,19 @@ const Presentation: NextPage = () => {
       font-size: 20px;
     }
   `
+
+  useEffect(() => {
+    const content: HTMLElement|null = document.querySelector('.contentPresentation')
+    if (content) {
+      content.style.height = window.screen.height + 'px'
+    }
+    window.addEventListener('resize', () => {
+      const content: HTMLElement|null = document.querySelector('.contentPresentation')
+      if (content) {
+        content.style.height = window.screen.height + 'px'
+      }
+    })
+  }, [])
 
   return (
     <div className="contentPresentation">

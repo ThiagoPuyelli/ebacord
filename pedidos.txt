@@ -1,0 +1,14 @@
+_ Si es que hay una imagen mejor al inicio de la pagina mejor
+_ Texto para el inicio de la pagina, contando muy resumidamente que es e-bacord en mas o menos 350 letras, 50 palabras.
+_ Foto para la parte de nosotros, como tambien un texto de mas longitud que el anterior, contando un poco mas de forma extensa sobre el equipo y el proyecto
+_ En la parte de nuestros cursos, necesito esta informacion para cada curso:
+* Logo
+* Nombre
+* Minimo 4 datos para que salgan como por ejemplo, "certificado incluido", "2 clases semanales" y demas.
+* Si es basico, avanzado, intermedio o lo que sea
+* Si es pago, el precio
+* Una breve descripción de lo que se vera en el curso, mas o menos como el inicio de la pagina de bacord.
+* Mínimo 4 datos sobre que se verá por ejemplo, "desarrollar proyectos de principio a fin" o "trabajar con elementos 3D" y demás
+* Contenido del curso por temas, por ejemplo "Introduccion", "Materiales y texturas", "Particulas".
+* Los profesores que van a participar del curso.
+_ Imagen de fondo para el formulario de contacto

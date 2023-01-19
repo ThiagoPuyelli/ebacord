@@ -28,6 +28,7 @@ const Contact = () => {
       }
       p {
         width: 800px;
+        margin-top: 60px;
       }
     }
     .contentForm {
