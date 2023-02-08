@@ -1,7 +1,13 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
 
-const CourseCard = ({image, price, info}: any) => {
+type CardData = {
+  image: any,
+  price: string,
+  info: string[]
+}
+
+const CourseCard = ({image, price, info}: CardData) => {
   const CardStyled = styled.div`
     display: flex;
     flex-flow: column wrap;
@@ -63,6 +69,12 @@ const CourseCard = ({image, price, info}: any) => {
         font-size: 16px;
       }
     }
+    @media (max-width: 1140px) {
+      right: 40px; 
+    }
+    @media (max-width: 964px) {
+      display: none;
+    }
   `
   
   const clickApply = () => {
@@ -71,7 +83,7 @@ const CourseCard = ({image, price, info}: any) => {
   }
   
   return (
-    <CardStyled>
+    <CardStyled className='courseCard'>
       <div className="imgCard">
         <Image src={image} alt='Image to course' />
       </div>

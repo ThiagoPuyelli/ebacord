@@ -1,4 +1,4 @@
-import logoContact from '../public/img/logoContact.png'
+import logoContact from '../public/img/mailWhite.png'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,6 +16,7 @@ const ContactButton = () => {
     transition: 300ms all;
     border: 1px solid #111;
     box-shadow: 0px 0px 2px black inset;
+    z-index: 3;
     :hover {
       transform: scale(1.1, 1.1);
       .imgContact {
@@ -29,6 +30,9 @@ const ContactButton = () => {
     .imgContact * {
       width: 100%;
       height: 100%;
+    }
+    @media (max-width: 431px) {
+      display: none;
     }
   `
 

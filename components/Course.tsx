@@ -10,15 +10,16 @@ type CourseData = {
   subtitle: string,
   title: string,
   information: string[],
-  color: string
+  color: string,
+  id: number
 }
 
-const Course = ({image, subtitle, information, title, color}: CourseData) => {
+const Course = ({image, subtitle, information, title, color, id}: CourseData) => {
   const CourseStyled = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    width: 350px;
+    width: 400px;
     color: white;
     padding: 20px;
     margin-top: 30px;
@@ -74,7 +75,7 @@ const Course = ({image, subtitle, information, title, color}: CourseData) => {
     .border {
       position: absolute;
       margin-top: -20px;
-      width: 350px;
+      width: 400px;
       height: 330px;
       transition: 300ms all;
     }
@@ -104,6 +105,22 @@ const Course = ({image, subtitle, information, title, color}: CourseData) => {
       }
       .border.left {
         margin-right: 10px;
+      }
+    }
+    @media (max-width: 491px) {
+      width: 95%;
+      .border {
+        width: 95%;
+      }
+    }
+    @media (max-width: 423px) {
+      .topCourse .topText .titleCourse {
+        font-size: 15px;
+      }
+    }
+    @media (max-width: 349px) {
+      .topCourse .topText .titleCourse {
+        font-size: 13px;
       }
     }
   `
@@ -136,7 +153,7 @@ const Course = ({image, subtitle, information, title, color}: CourseData) => {
           )
         })}
       </div>
-      <Link href='/course'>
+      <Link href={'/course?id=' + id}>
         <ButtonEffect color={color} value='Aplicar' type='button' />
       </Link>
     </CourseStyled>

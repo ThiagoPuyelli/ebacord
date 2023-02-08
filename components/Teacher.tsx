@@ -13,10 +13,11 @@ const Teacher = ({vocation, img, name, phrase}: TeacherData) => {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    width: 350px;
+    width: 300px;
     color: white;
     background: var(--principalColor);
     margin-top: 50px !important;
+    margin: 20px;
     font-family: pixelRand;
     border-radius: 20px;
     border: 1px solid #ccc;
@@ -24,7 +25,7 @@ const Teacher = ({vocation, img, name, phrase}: TeacherData) => {
       display: block;
       font-weight: normal;
       font-size: 20px;
-      padding: 20px;
+      padding: 10px;
       border-bottom: 1px solid #ccc;
       width: 100%;
       text-align: center;
@@ -39,8 +40,10 @@ const Teacher = ({vocation, img, name, phrase}: TeacherData) => {
         height: 100%;
       }
     }
-    .name, {
+    .name {
       margin: 10px;
+      font-size: 18px;
+      text-decoration: underline;
     }
     .sentence {
       margin: 10px;

@@ -11,15 +11,16 @@ const About = () => {
       justify-content: space-evenly;
       padding-bottom: 180px;
       background: var(--principalColor);
+      color: white;
+      z-index: 3;
       .titleAbout {
         display: block;
-        color: white;
         font-family: pixelRand;
         margin-top: 10px;
         margin-bottom: 30px;
         font-weight: normal;
         text-align: center;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid var(--secondaryColor);
         width: 90%;
         margin-top: 60px;
         padding-bottom: 10px;
@@ -28,6 +29,7 @@ const About = () => {
         width: 500px;
         box-shadow: 0px 0px 4px #111;
         border: 2px solid #111;
+        margin: 20px;
         * {
           width: 100%;
           height: 100%;
@@ -36,8 +38,13 @@ const About = () => {
       .textAbout {
         width: 400px;
         display: block;
-        color: white;
         font-size: 18px;
+        margin: 20px;
+      }
+      @media (max-width: 431px) {
+        .textAbout {
+          font-size: 17px;
+        }
       }
     `
 
@@ -54,7 +61,10 @@ const About = () => {
           <Image src={aboutImg} alt='about' />
         </div>
         <div className="textAbout">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas consectetur ad voluptates deleniti? Ratione quidem sed libero voluptatum doloremque doloribus, accusamus dolore ab similique animi qui nulla, quaerat porro voluptates, nihil quasi. Minus, iure repellendus aperiam autem consequatur laboriosam. Quisquam ducimus sint, sapiente qui alias aut quo repudiandae suscipit vel dignissimos, totam expedita quibusdam omnis sit dolores ipsum officia explicabo dolore repellat non, a iusto! Veniam vero velit animi fugit illum explicabo, tempore.
+        El proyecto Ebacord es parte de Bacord, una empresa que hace videojuegos desde Argentina, trabajamos en la creación y desarrollo de contenidos para plataformas móviles y PC. Nuestro negocio está enfocado en hacer juegos por encargo, nos encanta trabajar ayudando y colaborando con hacer realidad los sueños de los demás.
+
+Sentimos que la educación en desarrollo de videojuegos que se brinda en Argentina es muy buena y de alta calidad. Además el país está muy bien posicionado a nivel regional y mundial como un potencia dentro de la “economía del conocimiento”, por lo que seguimos entendiendo que estamos en una posición privilegiada frente a otros países.
+
         </div>
       </AboutStyled>
     )

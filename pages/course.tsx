@@ -4,20 +4,37 @@ import CourseTitle from "../components/courseComponents/CourseTitle";
 import CourseCard from "../components/courseComponents/CourseCard";
 import CourseContainer from "../components/courseComponents/CourseContainer";
 import CourseContact from "../components/courseComponents/CourseContact";
+import { useRouter } from "next/router";
+import { useEffect, useState } from 'react'
+
+type ICourse = {
+  name: string,
+  description: string,
+  color: string,
+  price: string,
+  info: string[],
+  image: any,
+  learning: string[],
+  content: string[],
+  teachers: number[]
+}
 
 const CoursePage = () => {
   const CourseStyled = styled.div`
     background: linear-gradient(to left, #1d3258, #111d33);
     padding-bottom: 80px;
   `
-  const {name, description, color, price, info, image, learning, content, teachers} = courses[0]
   
+  const router = useRouter()
+  const { id }: any = router.query
+  const course = courses[id]
   return (
-    <CourseStyled>
-      <CourseTitle name={name} description={description} color={color} />
-      <CourseCard image={image} price={price} info={info} />
-      <CourseContainer learning={learning} teachers={teachers} content={content} />
-      <CourseContact />
+    <CourseStyled className='contentCourse'>
+      {id ? (
+      <div><CourseTitle image={course.image} price={course.price} info={course.info} name={course.name} description={course.description} color={course.color} />
+      <CourseCard image={course.image} price={course.price} info={course.info} />
+      <CourseContainer learning={course.learning} teachers={course.teachers} content={course.content} /> </div>) : ''}
+      <CourseContact name={course.name} />
     </CourseStyled>
   )
 }

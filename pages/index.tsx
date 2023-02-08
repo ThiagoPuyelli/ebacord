@@ -8,6 +8,7 @@ import ButtonEffect from '../components/ButtonEffect'
 import About from '../components/About'
 import Courses from '../components/Courses'
 import Teachers from '../components/Teachers'
+import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
   const IndexStyled = styled.div`

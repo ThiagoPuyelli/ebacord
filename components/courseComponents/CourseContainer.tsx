@@ -57,8 +57,50 @@ const CourseContainer = ({learning, teachers, content}: any) => {
       .titleTeachers {
         display: block;
         width: 100%;
-        text-align: center;
+        text-align: left;
       }
+      .teacher {
+        margin: 0px;
+      }
+    }
+    @media (max-width: 1140px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    @media (max-width: 964px) {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      .teachersContainer {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        .titleTeachers {
+          text-align: center;
+        }
+      }
+    }
+    @media (max-width: 836px) {
+      padding-left: 30px;
+      padding-right: 30px;
+      .teachersContainer {
+        width: 100%;
+      }
+    }
+    @media (max-width: 686px) {
+      .learning,
+      .contentCourse {
+        width: 100%;
+      }
+    }
+    @media (max-width: 408px) {
+      .learning .dataLearning {
+        width: 100%;
+      }
+    }
+    @media (max-width: 372px) {
+      padding-left: 10px;
+      padding-right: 10px;
     }
   ` 
 

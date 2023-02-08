@@ -16,6 +16,8 @@ const ButtonEffect = ({value, color, type}: any) => {
         outline: none;
         font-size: 18px;
         margin: 1em 0.8em;
+        font-family: pixelRand;
+        font-weight: normal;
         color: ${color};
         :after,
         :before {

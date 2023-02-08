@@ -5,17 +5,21 @@ import { useForm } from "react-hook-form"
 import * as yup from 'yup'
 import emailjs from '@emailjs/browser'
 import ButtonEffect from "../components/ButtonEffect"
+import facebook from '../public/img/facebook.png'
+import twitter from '../public/img/twitter.png'
+import mailWhite from '../public/img/mailWhite.png'
+import Link from "next/link"
+import Image from "next/image"
 
 const Contact = () => {
   const ContactStyled = styled.div`
-    padding-top: 80px;
     color: white;
     .textToContact {
       display: flex;
       flex-flow: column wrap;
       align-items: center;
       background: linear-gradient(to left, #1d3258, #111d33);
-      padding-top: 60px;
+      padding-top: 140px !important;
       padding-bottom: 60px;
       h1 {
         display: block;
@@ -30,25 +34,28 @@ const Contact = () => {
         width: 800px;
         margin-top: 60px;
       }
+      .contacts {
+        
+      }
     }
     .contentForm {
       padding-top: 100px;
       padding-bottom: 80px;
       border-top: 2px solid black;
       border-bottom: 2px solid black;
-      background-color: rgba(0, 0, 0, 0.7);
+      background: linear-gradient(-90deg, black, rgba(0, 0, 0, 0.5), black);
       .form {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
         width: 450px;
         margin: 0 auto;
-        border: 1px solid #666;
+        border: 2px solid var(--secondaryColor);
         /*box-shadow: 0px 0px 4px #666;*/
         border-radius: 20px;
         padding: 20px;
         background: transparent;
-        background-color: rgba(0, 0, 0, 0.7);
+        /*background-color: #09111f;*/
         .titleContact {
           display: block;
           width: 100%;
@@ -56,6 +63,7 @@ const Contact = () => {
           font-family: pixelRand;
           font-weight: normal;
           text-shadow: 0px 0px 2px #111;
+          margin-top: 20px;
         }
         .formContact {
           display: flex;
@@ -67,16 +75,18 @@ const Contact = () => {
             width: 100%;
             padding: 10px;
             height: 30px;
-            border: 1px solid #ccc;
+            border: 2px solid var(--secondaryColor);
             margin-top: 20px;
             font-size: 16px;
             font-family: Roboto;
             background: transparent;
             color: white;
+            font-family: pixelRand;
+            font-weight: normal;
           }
           .inputContact {
             border: none;
-            border-bottom: 1px solid white;
+            border-bottom: 2px solid var(--secondaryColor);
           }
           .description {
             width: 100%;
@@ -97,6 +107,41 @@ const Contact = () => {
             cursor: pointer;
             font-family: Roboto;
           }
+        }
+      }
+    }
+
+    @media (max-width: 835px) {
+      .textToContact {
+        width: 100%;
+        padding: 40px;
+        * {
+          width: 100% !important;
+        }
+      }
+    }
+    
+    @media (max-width: 493px) {
+      .imgForm {
+        width: 95% !important;
+        .form {
+          width: 100%;
+        }
+      }
+      .formContact {
+        width: 100%;
+      }
+    }
+    @media (max-width: 352px) {
+      .textToContact {
+        padding: 0px;
+        .titleTextContact,
+        .pToContact {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+        .mailContact {
+          margin-bottom: 40px;
         }
       }
     }
@@ -134,10 +179,11 @@ const Contact = () => {
   return (
     <ContactStyled className='contentContact'>
       <div className="textToContact">
-        <h1>Contacto</h1>
-        <p className='text'>
+        <h1 className='titleTextContact'>Contacto</h1>
+        <p className='pToContact'>
           Para contactarte con nosotros utiliza este formulario o utiliza los datos que estan mas abajo, en el pie de página donde encontraras tanto el numero de teléfono como el correo
         </p>
+        
       </div>
       <div className="imgContentForm">
         <div className="contentForm">
@@ -145,10 +191,10 @@ const Contact = () => {
             <div className="form">
               <h1 className="titleContact">Envia tu mensaje!</h1>
               <form className="formContact" onSubmit={handleSubmit(submitForm)}>
-                <input className='inputContact' maxLength={50} type="text" placeholder='Nombre' {...register('name')} />
-                <input className='inputContact' maxLength={50} type="text" placeholder='Apellido' {...register('lastname')} />
-                <input className='inputContact' maxLength={30} type="email" placeholder='Correo electrónico' {...register('email')} />
-                <input className='inputContact phone' maxLength={15} type="text" placeholder='Numero de teléfono' {...register('phone')} />
+                <input autoComplete="new-password" className='inputContact' maxLength={50} type="text" placeholder='Nombre' {...register('name')} />
+                <input autoComplete="new-password" className='inputContact' maxLength={50} type="text" placeholder='Apellido' {...register('lastname')} />
+                <input autoComplete="new-password" className='inputContact' maxLength={30} type="email" placeholder='Correo electrónico' {...register('email')} />
+                <input autoComplete="new-password" className='inputContact phone' maxLength={15} type="text" placeholder='Numero de teléfono' {...register('phone')} />
                 <textarea placeholder="Motivo de consulta" maxLength={400} className="description" {...register('message')}></textarea>
                 <ButtonEffect value='Enviar mensaje' color='#ccc' type='submit' />
               </form>
