@@ -269,7 +269,7 @@ const Header = () => {
       <div className="complete">
         <div className="links left">
           <div className="link toLink">
-            <Link to='courses' smooth={true} offset={-70} className='linkHref link'>Cursos</Link>
+            <Link to='course' smooth={true} offset={-70} className='linkHref link'>Cursos</Link>
             <div className="linkHref hover">Cursos</div>
             <div className="subContent">
               <div className="subLinks">

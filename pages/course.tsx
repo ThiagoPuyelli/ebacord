@@ -5,14 +5,14 @@ import CourseCard from "../components/courseComponents/CourseCard";
 import CourseContainer from "../components/courseComponents/CourseContainer";
 import CourseContact from "../components/courseComponents/CourseContact";
 import { useRouter } from "next/router";
-import { useEffect, useState } from 'react'
 
-type ICourse = {
+export type ICourse = {
   name: string,
   description: string,
   color: string,
   price: string,
   info: string[],
+  difficulty: 'intermedio'|'basica'|'avanzado',
   image: any,
   learning: string[],
   content: string[],
@@ -30,11 +30,11 @@ const CoursePage = () => {
   const course = courses[id]
   return (
     <CourseStyled className='contentCourse'>
-      {id ? (
-      <div><CourseTitle image={course.image} price={course.price} info={course.info} name={course.name} description={course.description} color={course.color} />
-      <CourseCard image={course.image} price={course.price} info={course.info} />
-      <CourseContainer learning={course.learning} teachers={course.teachers} content={course.content} /> </div>) : ''}
-      <CourseContact name={course.name} />
+      {id && course ? (
+      <div><CourseTitle image={course ? course.image : 'pepe'} price={course ? course.price : 'pepe'} info={course ? course.info : 'pepe'} name={course ? course.name : 'pepe'} description={course ? course.description : 'pepe'} color={course ? course.color : 'pepe'} />
+      <CourseCard image={course ? course.image : 'pepe'} price={course ? course.price : 'pepe'} info={course ? course.info : ['pepe']} />
+      <CourseContainer learning={course ? course.learning : 'pepe'} teachers={course ? course.teachers : 'pepe'} content={course ? course.content : 'pepe'} /> </div>) : ''}
+      <CourseContact name={course ? course.name : 'pepe'} />
     </CourseStyled>
   )
 }

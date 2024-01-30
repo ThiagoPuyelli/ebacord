@@ -1,8 +1,9 @@
 //import unity from '../public/img/unity.png'
 import digitalTools from '../public/img/digitalTools.png'
 import design from '../public/img/design.png'
+import { ICourse } from '../pages/course'
 
-export default [
+const courses: ICourse[] = [
   {
     name: 'HERRAMIENTAS DIGITALES',
     description: 'Taller para enseñar mediante la práctica y el ejercicio diversas capacidades personales que permita lograr trabajos y publicaciones de mayor calidad',
@@ -66,3 +67,5 @@ export default [
     ]
   }
 ]
+
+export default courses
